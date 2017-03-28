@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-es2015-spread",
+    "transform-async-to-generator"
+  ],
+  "presets": [
+    "es2015-node"
+  ],
+  "ignore": [
+    "**/*.jsx"
+  ]
+}

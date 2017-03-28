@@ -1,0 +1,47 @@
+{
+  "name": "translationio-client-js",
+  "version": "1.0.0",
+  "main": "dist",
+  "bin": {
+    "translation": "./dist/bin/translationio.js",
+    "translation-init": "./dist/bin/translationio-init.js",
+    "translation-sync": "./dist/bin/translationio-sync.js"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "npm run build && ava",
+    "build": "npm run clean && babel src --out-dir dist",
+    "prepublish": "npm run build",
+    "clean": "rimraf dist",
+    "lint": "eslint ./src --cache --ignore-pattern .gitignore",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
+  },
+  "pre-commit": "precommit-msg, lint",
+  "devDependencies": {
+    "ava": "*",
+    "babel-cli": "^6.23.0",
+    "babel-plugin-transform-async-to-generator": "^6.22.0",
+    "babel-plugin-transform-es2015-spread": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015-node": "^6.1.1",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-plugin-import": "^2.2.0"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "babel-polyfill": "^6.23.0",
+    "bluebird": "^3.5.0",
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0",
+    "gettext-parser": "^1.2.2",
+    "invariant": "^2.2.2",
+    "lodash.attempt": "^4.2.0",
+    "lodash.omit": "^4.5.0",
+    "lodash.omitby": "^4.6.0",
+    "mkdirp": "^0.5.1",
+    "po2json": "^0.4.5",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^2.6.1"
+  }
+}
